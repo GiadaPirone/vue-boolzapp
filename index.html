@@ -5,7 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/style.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <title>Boolzap</title>
 </head>
 <body>
@@ -13,11 +15,11 @@
     <div id="app">
 
         <main>
-            <div class="container marginAuto dFlex">
+            <div class="container marginAuto dFlex padding0">
                 <!-- sezione contatti. -->
-                <div class="sezioneSx dFlex">
+                <div class="sezioneSx dFlex flexDirectionColums ">
                     <!-- utentePrincipale. -->
-                    <div class="utentePrincipale dFlex justifyContentBetween">
+                    <div class="utentePrincipale dFlex justifyContentBetween padding5">
                         <!-- img e nome. -->
                         <div class="dFlex">
                             <img class="avatarIo marginAuto" src="./img/avatar_io.jpg" alt="">
@@ -32,6 +34,35 @@
                         </div>
                     </div>
 
+                    <!-- notifiche. -->
+                    <div class="notifiche dFlex padding10">
+                        <div class="campanella dFlex alignItemsCenter justifyContentCenter">
+                           <span class="iconaNotifiche"><i class="fa-solid fa-bell-slash"></i></span> 
+                        </div>
+                    </div>
+
+                    <!-- navbar -->
+                    <nav class="navbar bg-light">
+                        <form class="container-fluid">
+                            <div class="input-group">
+                                <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-magnifying-glass"></i></span>
+                                <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                            </div>
+                        </form>
+                    </nav>
+
+                    <!-- lista contatti. -->
+                    <div class="chat" v-for="(utente, i) in contacts ">
+                        <div class="dFlex">
+                            <img class="avatar" src="img/avatar_1.jpg" alt="">
+                            <p>{{utente.name}}</p>
+                            <p>{{utente.name}}</p>
+                        </div>
+
+                    </div>
+                    
+
+
                 </div>
 
 
@@ -41,7 +72,7 @@
                 </div>
             </div>
         </main>
-        
+
     </div>
 
     <script src="./js/main.js"></script>
