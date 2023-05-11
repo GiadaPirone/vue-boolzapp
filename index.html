@@ -53,22 +53,46 @@
 
                     <!-- lista contatti. -->
                     <div class="chat" v-for="(utente, i) in contacts ">
-                        <div class="dFlex">
-                            <img class="avatar" src="img/avatar_1.jpg" alt="">
-                            <p>{{utente.name}}</p>
-                            <p>{{utente.name}}</p>
+                        <div class="dFlex border">
+                            <img class="avatar" :src="utente.avatar" alt="">
+                            <div>
+                                <p>{{utente.name}}</p>
+                                <p>Ultimo messaggio inviato</p>
+                            </div>
                         </div>
 
                     </div>
                     
-
-
                 </div>
 
 
                 <!-- chat contatto -->
-                <div>
+                <div class="containerDx dFlex">
 
+                    <div class="utenteChatDx dFlex">
+                        <div >
+                            <img class="chatInCorsoImg" :src="contacts[0].avatar" alt="">                            
+                        </div>
+                        <div>
+                            <p>{{contacts[0].name}}</p>
+                            <p>Ultimo accesso oggi alle 12</p>
+                            <!-- <p v-for="accesso in contacts[0].messages">{{accesso.date}}</p> -->
+                        </div>
+                    </div>
+
+                    <div class="contenutoChatDomanda dFlex flexDirectionColums alignItemsEnd">
+
+                        <div class="contenuto dFlex justifyContentCenter marginBottom10" v-for="chat in contacts[0].messages">
+                            <p>{{chat.message}}</p>
+                            <div class="orario">
+                                <p class="fontSizeOrario" >{{chat.date}}</p>
+                            </div>
+                        </div>
+                    </div>
+                        
+                    
+                    
+                    
                 </div>
             </div>
         </main>
