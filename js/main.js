@@ -172,5 +172,18 @@ createApp({
             
             
         }
+    },
+
+    methods:{
+        // aggiungiClasse(chat){
+        //     let classeflexEnd ="sent";
+        //     let classe = " received";
+
+        //     if(chat.status == 'sent'){
+        //         return classeflexEnd;
+        //     } else {
+        //         return classe;
+        //     }
+        // }
     }
 }).mount (`#app`)

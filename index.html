@@ -56,7 +56,7 @@
                         <div class="dFlex border">
                             <img class="avatar" :src="utente.avatar" alt="">
                             <div>
-                                <p>{{utente.name}}</p>
+                                <p>{{i}}{{utente.name}}</p>
                                 <p>Ultimo messaggio inviato</p>
                             </div>
                         </div>
@@ -80,17 +80,17 @@
                         </div>
                     </div>
 
-                    <div class="contenutoChatDomanda dFlex flexDirectionColums alignItemsEnd">
+                    <!-- contenitore della chat domanda7risposta. -->
+                    
+                    <div class="contenutoChat dFlex flexDirectionColums">
 
-                        <div class="contenuto dFlex justifyContentCenter marginBottom10" v-for="chat in contacts[0].messages">
+                        <div v-for="chat in contacts[0].messages" :class="chat.status" >
+                            
                             <p>{{chat.message}}</p>
-                            <div class="orario">
-                                <p class="fontSizeOrario" >{{chat.date}}</p>
-                            </div>
+                            
                         </div>
                     </div>
-                        
-                    
+              
                     
                     
                 </div>
@@ -102,3 +102,4 @@
     <script src="./js/main.js"></script>
 </body>
 </html>
+
