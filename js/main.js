@@ -4,7 +4,7 @@ createApp({
 
     data(){
         return{
-            
+            chatCorrente: 0,
             contacts: [
                 {
                     name: 'Michele',
@@ -187,10 +187,8 @@ createApp({
         // }
 
         visualizzaChat(i){
-            let array= [];
-            array.push(i);
-            
-            console.log(array);
+            this.chatCorrente = i;
+            console.log(this.chatCorrente);
 
         }
     }
