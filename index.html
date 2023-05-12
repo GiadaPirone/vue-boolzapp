@@ -52,7 +52,7 @@
                     </nav>
 
                     <!-- lista contatti. -->
-                    <div class="chat" v-for="(utente, i) in contacts ">
+                    <div class="chat" v-for="(utente, i) in contacts " @click="visualizzaChat(i)">
                         <div class="dFlex border">
                             <img class="avatar" :src="utente.avatar" alt="">
                             <div>
@@ -80,14 +80,11 @@
                         </div>
                     </div>
 
-                    <!-- contenitore della chat domanda7risposta. -->
-                    
+                    <!-- contenitore della chat domanda7risposta. -->                    
                     <div class="contenutoChat dFlex flexDirectionColums">
 
-                        <div v-for="chat in contacts[0].messages" :class="chat.status" >
-                            
-                            <p>{{chat.message}}</p>
-                            
+                        <div v-for="chat in contacts[0].messages" :class="chat.status" >                            
+                            <p>{{chat.message}}</p>                           
                         </div>
                     </div>
               

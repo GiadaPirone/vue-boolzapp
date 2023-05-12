@@ -4,7 +4,7 @@ createApp({
 
     data(){
         return{
-
+            
             contacts: [
                 {
                     name: 'Michele',
@@ -185,5 +185,13 @@ createApp({
         //         return classe;
         //     }
         // }
+
+        visualizzaChat(i){
+            let array= [];
+            array.push(i);
+            
+            console.log(array);
+
+        }
     }
 }).mount (`#app`)
