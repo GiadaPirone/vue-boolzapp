@@ -23,7 +23,7 @@
                         <!-- img e nome. -->
                         <div class="dFlex">
                             <img class="avatarIo marginAuto" src="./img/avatar_io.jpg" alt="">
-                            <p class="dFlex alignItemsCenter padding5Left">Sofia</p>
+                            <p class="dFlex alignItemsCenter padding5Left fontWeight">Sofia</p>
                         </div>
                         <!-- icone. -->
                         <div class="conteinerIcone dFlex alignItemsCenter">
@@ -39,6 +39,10 @@
                         <div class="campanella dFlex alignItemsCenter justifyContentCenter">
                            <span class="iconaNotifiche"><i class="fa-solid fa-bell-slash"></i></span> 
                         </div>
+                        <div class="dFlex flexDirectionColums paddingLeft">
+                            <p class="marginAuto fontWeight">Ricevi notifiche di nuovi messaggi</p>
+                            <a href="#">Attiva notifiche desktop</a>
+                        </div>
                     </div>
 
                     <!-- navbar -->
@@ -52,11 +56,11 @@
                     </nav>
 
                     <!-- lista contatti. -->
-                    <div class="chat" v-for="(utente, i) in contacts " @click="visualizzaChat(i)">
-                        <div class="dFlex border">
+                    <div class="chat border dFlex alignItemsCenter" v-for="(utente, i) in contacts " @click="visualizzaChat(i)">
+                        <div class="dFlex ">
                             <img class="avatar" :src="utente.avatar" alt="">
-                            <div>
-                                <p>{{utente.name}}</p>
+                            <div class="dFlex flexDirectionColums paddingLeft">
+                                <p class="margin0 fontWeight">{{utente.name}}</p>
                                 <p>Ultimo messaggio inviato</p>
                             </div>
                         </div>
@@ -74,7 +78,7 @@
                             <img class="chatInCorsoImg" :src="contacts[chatCorrente].avatar" alt="">                            
                         </div>
                         <div>
-                            <p>{{contacts[chatCorrente].name}}</p>
+                            <p class="margin0 fontWeight">{{contacts[chatCorrente].name}}</p>
                             <p>Ultimo accesso oggi alle 12</p>
                             <!-- <p v-for="accesso in contacts[0].messages">{{accesso.date}}</p> -->
                         </div>
@@ -86,6 +90,14 @@
                         <div v-for="chat in contacts[chatCorrente].messages" :class="chat.status" >                            
                             <p>{{chat.message}}</p>                           
                         </div>
+                    </div>
+
+                    <!-- contenitore footer -->
+                    <div class="contenitoreFooter dFlex justifyContentCenter alignItemsCenter">
+                        
+                        <!-- testo. -->
+                        <input class="form-control width80 height70" type="text" value="Readonly input here..." aria-label="readonly input example" readonly>
+
                     </div>
               
                     
