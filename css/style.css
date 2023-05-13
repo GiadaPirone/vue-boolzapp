@@ -26,6 +26,7 @@ body{
 .alignItemsCenter {align-items: center;}
 .alignItemsEnd {align-items: end;}
 .justifyContentBetween {justify-content: space-between;}
+.justifyContentAround { justify-content: space-around;}
 .justifyContentCenter { justify-content: center;}
 .justifyContentEnd {justify-content: end; }
 .dFlex {display: flex;}
@@ -136,6 +137,8 @@ body{
     background-color: green;
     padding: 20px;
     border-radius: 15px;
+    margin-bottom: 10px;
+    margin-top: 10px;
 }
 
 .received{
@@ -143,6 +146,7 @@ body{
     border-radius: 15px;
     background-color: white;
     width: fit-content;
+    margin-top: 10px;
 }
 
 /* contenitore footer. */
