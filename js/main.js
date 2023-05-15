@@ -194,20 +194,15 @@ createApp({
         },
 
         nuovoMessaggio(){
-            let classeSent = "sent";
+            
             console.log(this.testo);
 
-            const oggetto= {messages: this.testo, status: 'sent' }
-            this.contacts.push(oggetto);
+            const oggetto= {message: this.testo, status: 'sent' }
+            this.contacts[this.chatCorrente].messages.push(oggetto);
             
             console.log(oggetto);
             this.testo = "";
 
-            if( oggetto.status == " sent"){
-                return classeSent;
-            }
-
-            
         }
     }
 }).mount (`#app`)
