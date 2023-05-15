@@ -200,9 +200,25 @@ createApp({
             const oggetto= {message: this.testo, status: 'sent' }
             this.contacts[this.chatCorrente].messages.push(oggetto);
             
+            setTimeout(() => {
+                console.log("1sec")
+                const divRisposta = document.createElement("div");
+                divRisposta.className="received";
+                document.querySelector(".contenutoChat").appendChild(divRisposta);
+                divRisposta.innerHTML="ok"
+              }, 1*1000);
+            
+
+            
+            
             console.log(oggetto);
             this.testo = "";
 
-        }
+
+
+        },
+
+       
+
     }
 }).mount (`#app`)
