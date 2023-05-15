@@ -4,6 +4,7 @@ createApp({
 
     data(){
         return{
+            testo: "",
             chatCorrente: 0,
             contacts: [
                 {
@@ -190,6 +191,23 @@ createApp({
             this.chatCorrente = i;
             console.log(this.chatCorrente);
 
+        },
+
+        nuovoMessaggio(){
+            let classeSent = "sent";
+            console.log(this.testo);
+
+            const oggetto= {messages: this.testo, status: 'sent' }
+            this.contacts.push(oggetto);
+            
+            console.log(oggetto);
+            this.testo = "";
+
+            if( oggetto.status == " sent"){
+                return classeSent;
+            }
+
+            
         }
     }
 }).mount (`#app`)

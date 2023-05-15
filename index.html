@@ -87,7 +87,7 @@
                     <!-- contenitore della chat domanda7risposta. -->                    
                     <div class="contenutoChat dFlex flexDirectionColums">
 
-                        <div v-for="chat in contacts[chatCorrente].messages" :class="chat.status" >                            
+                        <div v-for="chat in contacts[chatCorrente].messages" :class="chat.status">                            
                             <p>{{chat.message}}</p>                           
                         </div>
                     </div>
@@ -96,7 +96,7 @@
                     <div class="contenitoreFooter dFlex justifyContentAround alignItemsCenter">
 
                         <span><i class="fa-regular fa-face-smile"></i></span>                        
-                        <input class="form-control width80 height70" type="text" value="Scrivi un messaggio.." aria-label="Scrivi un messaggio.." readonly placeholder="Scrivi un messaggio..">
+                        <input v-model="testo" @keyup.enter="nuovoMessaggio()" class="form-control width80 height70" type="text" placeholder="Scrivi un messaggio..">
                         <span><i class="fa-solid fa-microphone"></i></span>
 
                     </div>
