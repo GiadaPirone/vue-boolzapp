@@ -50,13 +50,13 @@
                         <form class="container-fluid">
                             <div class="input-group">
                                 <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-magnifying-glass"></i></span>
-                                <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                                <input @keyup="cercaNome()" @click="cambioBooleano()" v-model="nome" type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
                             </div>
                         </form>
                     </nav>
 
                     <!-- lista contatti. -->
-                    <div class="chat border dFlex alignItemsCenter" v-for="(utente, i) in contacts " @click="visualizzaChat(i)">
+                    <div class="chat border dFlex alignItemsCenter" v-for="(utente, i) in contacts " @click="visualizzaChat(i)" v-show="contacts[i].visible">
                         <div class="dFlex ">
                             <img class="avatar" :src="utente.avatar" alt="">
                             <div class="dFlex flexDirectionColums paddingLeft">

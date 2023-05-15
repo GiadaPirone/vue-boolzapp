@@ -4,6 +4,7 @@ createApp({
 
     data(){
         return{
+            nome: "",
             risposta: "ok",
             testo: "",
             chatCorrente: 0,
@@ -211,11 +212,18 @@ createApp({
             console.log(oggetto);
             this.testo = "";
 
-
-
         },
 
-       
+        cercaNome(){
+            console.log(this.nome);
+            
+        },
+
+        cambioBooleano(){
+            this.contacts[0].visible = false;
+            console.log(this.contacts.visible)
+        }
+
 
     }
 }).mount (`#app`)
