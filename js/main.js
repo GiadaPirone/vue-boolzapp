@@ -4,7 +4,7 @@ createApp({
 
     data(){
         return{
-            nome: "",
+            ricercaInput: "",
             risposta: "ok",
             testo: "",
             chatCorrente: 0,
@@ -215,15 +215,29 @@ createApp({
         },
 
         cercaNome(){
-            console.log(this.nome);
-            
-        },
 
-        cambioBooleano(){
-            this.contacts[0].visible = false;
-            console.log(this.contacts.visible)
+           
+
+                for (let i = 0; i < this.contacts.length; i++) {
+                    const nome = this.contacts[i].name;
+                
+                    console.log(this.contacts[i].visible)
+                    if( this.ricercaInput.trim() != ""){
+                        if(!nome.includes(this.ricercaInput) ){
+                        this.contacts[i].visible = false
+                   
+                        };
+                    } else {
+                        this.contacts[i].visible = true
+
+                    }
+                }
+                // this.ricercaInput = "";
+            
+
         }
 
-
-    }
+            
+        
+    }    
 }).mount (`#app`)
